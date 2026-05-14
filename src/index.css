@@ -1,0 +1,90 @@
+@import './styles/typography.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  scrollbar-color: rgba(99, 179, 255, 0.25) transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(33, 135, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 20% 10%, rgba(124, 58, 237, 0.16), transparent 25%),
+    #05060d;
+  color: #f8fafc;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.bg-panel {
+  background: rgba(11, 15, 29, 0.78);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glow-border {
+  box-shadow: 0 0 38px rgba(99, 179, 255, 0.12);
+}
+
+.text-faded {
+  color: rgba(226, 232, 240, 0.72);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.cursor-fade {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  background: rgba(70, 227, 255, 0.9);
+  box-shadow: 0 0 18px rgba(70, 227, 255, 0.25);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.78; transform: scale(1); }
+  50% { opacity: 0.98; transform: scale(1.08); }
+}
+
+.animated-grid {
+  background-image:
+    linear-gradient(rgba(96, 165, 250, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.08) 1px, transparent 1px);
+  background-size: 120px 120px;
+}
+
+@media (max-width: 768px) {
+  .animated-grid {
+    background-size: 90px 90px;
+  }
+}
