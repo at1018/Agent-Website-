@@ -4,8 +4,8 @@ import * as THREE from 'three';
 
 function HeroVisual() {
   return (
-    <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#07101f]/95 shadow-soft backdrop-blur-xl">
-      <Canvas camera={{ position: [0, 0, 14], fov: 32 }}>
+    <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#07101f]/95 shadow-soft backdrop-blur-xl w-full h-[260px] sm:h-[340px] md:h-[420px] lg:h-[520px]">
+      <Canvas camera={{ position: [0, 0, 14], fov: 32 }} className="h-full w-full">
         <color attach="background" args={["#030615"]} />
         <fog attach="fog" args={["#030615", 8, 24]} />
         <ambientLight intensity={0.2} />

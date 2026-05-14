@@ -172,6 +172,14 @@ function AdaptiveWorkflowCanvas() {
 function AdaptiveWorkflowSection() {
   const [hoveredNode, setHoveredNode] = useState(null);
 
+  const tooltipStyle = hoveredNode
+    ? {
+        left: `${Math.min(90, Math.max(10, (hoveredNode.x / width) * 100))}%`,
+        top: `${Math.min(80, Math.max(10, (hoveredNode.y / height) * 100))}%`,
+        transform: 'translate(-50%, -110%)',
+      }
+    : undefined;
+
   return (
     <div id="adaptive-evolution" className="rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
       <div className="grid gap-8">
@@ -181,7 +189,7 @@ function AdaptiveWorkflowSection() {
           <p className="max-w-2xl text-base leading-7 text-slate-300">The system continuously evaluates whether existing capabilities are sufficient to fulfill incoming requests. When limitations are identified, autonomous improvement workflows are triggered to expand system intelligence.</p>
         </div>
 
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#06131f]/95 p-4 sm:p-6">
+        <div className="relative overflow-visible rounded-[32px] border border-white/10 bg-[#06131f]/95 p-4 sm:p-6">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.08),transparent_24%),radial-gradient(circle_at_90%_25%,rgba(168,85,247,0.1),transparent_20%)]" />
           <div className="absolute inset-0 opacity-70">
             <Canvas camera={{ position: [0, 0, 18], fov: 35 }} className="pointer-events-none">
@@ -194,65 +202,37 @@ function AdaptiveWorkflowSection() {
           </div>
 
           <div className="relative mx-auto max-w-[1720px] py-8">
-            <div className="hidden lg:block">
-              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#081724]/90 p-4">
-                <svg viewBox={`0 0 ${width} ${height}`} className="h-[520px] w-full">
-                  <defs>
-                    <linearGradient id="gradient-fast" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#38bdf8" />
-                      <stop offset="100%" stopColor="#4ade80" />
-                    </linearGradient>
-                    <linearGradient id="gradient-evo" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#d946ef" />
-                      <stop offset="100%" stopColor="#f472b6" />
-                    </linearGradient>
-                  </defs>
-                  {connections.map((connection) => (
-                    <WorkflowLine key={connection.id} path={connection.path} color={connection.color} delay={connection.delay} />
-                  ))}
-                  {workflowParticlePaths().map((particle) => (
-                    <FlowParticle key={particle.id} points={particle.points} delay={particle.delay} />
-                  ))}
-                  {nodes.map((node) => (
-                    <WorkflowNode key={node.id} node={node} onHover={setHoveredNode} />
-                  ))}
-                </svg>
-                {hoveredNode && (
-                  <div
-                    className="pointer-events-none absolute z-20 max-w-xs rounded-3xl border border-white/10 bg-[#020a13]/95 p-4 text-sm text-slate-100 shadow-soft backdrop-blur-xl"
-                    style={{
-                      left: `${(hoveredNode.x / width) * 100}%`,
-                      top: `${(hoveredNode.y / height) * 100}%`,
-                      transform: 'translate(-50%, -110%)',
-                    }}
-                  >
-                    <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80">{hoveredNode.label}</p>
-                    <p className="mt-2 leading-6 text-slate-300">{hoveredNode.tooltip}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            <div className="lg:hidden space-y-6">
-              {nodes.map((node, index) => (
-                <motion.div
-                  key={node.id}
-                  whileHover={{ y: -4 }}
-                  className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#081724]/95 p-4"
+            <div className="relative overflow-visible rounded-[28px] border border-white/10 bg-[#081724]/90 p-4">
+              <svg viewBox={`0 0 ${width} ${height}`} className="h-[320px] w-full sm:h-[420px] lg:h-[520px]">
+                <defs>
+                  <linearGradient id="gradient-fast" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#38bdf8" />
+                    <stop offset="100%" stopColor="#4ade80" />
+                  </linearGradient>
+                  <linearGradient id="gradient-evo" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#d946ef" />
+                    <stop offset="100%" stopColor="#f472b6" />
+                  </linearGradient>
+                </defs>
+                {connections.map((connection) => (
+                  <WorkflowLine key={connection.id} path={connection.path} color={connection.color} delay={connection.delay} />
+                ))}
+                {workflowParticlePaths().map((particle) => (
+                  <FlowParticle key={particle.id} points={particle.points} delay={particle.delay} />
+                ))}
+                {nodes.map((node) => (
+                  <WorkflowNode key={node.id} node={node} onHover={setHoveredNode} />
+                ))}
+              </svg>
+              {hoveredNode && (
+                <div
+                  className="pointer-events-none absolute z-20 max-w-xs rounded-3xl border border-white/10 bg-[#020a13]/95 p-4 text-sm text-slate-100 shadow-soft backdrop-blur-xl"
+                  style={tooltipStyle}
                 >
-                  <div className="flex items-center gap-4">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-white" style={{ boxShadow: `0 0 28px ${node.color}` }}>
-                      ●
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-white">{node.label}</p>
-                      <p className="mt-1 text-sm text-slate-400">{node.subtitle}</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-sm leading-6 text-slate-300">{node.tooltip}</p>
-                  {index < nodes.length - 1 && <div className="absolute right-5 top-full h-8 w-[2px] bg-gradient-to-b from-transparent via-cyan-300/50 to-transparent" />}
-                </motion.div>
-              ))}
+                  <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80">{hoveredNode.label}</p>
+                  <p className="mt-2 leading-6 text-slate-300">{hoveredNode.tooltip}</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

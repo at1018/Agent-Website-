@@ -35,8 +35,8 @@ function HeroSection() {
           <span className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-cyan-300">
             Self-Evolving AI Infrastructure
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] text-white">AI That Expands Beyond Its Original Capabilities.</h1>
-          <p className="max-w-3xl text-base sm:text-lg leading-7 text-slate-300">Traditional AI systems stop at predefined tools. Our infrastructure detects capability gaps, orchestrates autonomous development workflows, and continuously evolves through human-approved intelligence expansion.</p>
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-semibold tracking-[-0.04em] text-white">AI That Expands Beyond Its Original Capabilities.</h1>
+          <p className="max-w-3xl text-sm sm:text-base leading-7 text-slate-300">Traditional AI systems stop at predefined tools. Our infrastructure detects capability gaps, orchestrates autonomous development workflows, and continuously evolves through human-approved intelligence expansion.</p>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <a href="/#workflow" className="inline-flex items-center justify-center rounded-3xl bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:brightness-110">Watch Evolution <ArrowRight className="ml-3 h-4 w-4" /></a>
             <a href="/#architecture" className="inline-flex items-center justify-center rounded-3xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/40 hover:bg-white/10">Explore Architecture</a>
@@ -56,13 +56,13 @@ function HeroSection() {
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.75, ease: 'easeOut' }} className="relative">
+        <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.75, ease: 'easeOut' }} className="relative w-full max-w-[780px] mx-auto sm:mx-0">
           <HeroVisual />
-          <div className="absolute left-6 top-6 rounded-3xl border border-cyan-300/10 bg-[#06121f]/90 px-4 py-3 shadow-soft backdrop-blur-xl">
+          <div className="absolute left-4 top-4 rounded-3xl border border-cyan-300/10 bg-[#06121f]/90 px-4 py-3 shadow-soft backdrop-blur-xl sm:left-6 sm:top-6">
             <p className="text-xs uppercase tracking-[0.28em] text-cyan-300/80">Live intelligence</p>
             <p className="mt-2 text-sm text-white">Realtime capability growth metrics</p>
           </div>
-          <div className="absolute right-6 bottom-6 rounded-3xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300 shadow-soft backdrop-blur-xl">
+          <div className="absolute right-4 bottom-4 rounded-3xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300 shadow-soft backdrop-blur-xl sm:right-6 sm:bottom-6">
             <span className="inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400 mr-2" />Active evolution engine
           </div>
         </motion.div>
@@ -147,7 +147,7 @@ function WorkflowSection() {
           >
             <div className="overflow-hidden rounded-[28px] border border-white/10 bg-[#08111f]/95 p-5 shadow-soft backdrop-blur-xl">
               <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80">Workflow timeline</p>
-              <div className="mt-6 grid gap-4 grid-cols-1 sm:grid-cols-2 xl:grid-cols-5">
+              <div className="mt-6 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                   {steps.map((step, index) => (
                     <div key={step} className="rounded-[28px] border border-white/10 bg-[#0b1320]/95 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
                       <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-300/15 font-semibold">{index + 1}</div>
