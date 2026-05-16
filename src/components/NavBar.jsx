@@ -21,8 +21,8 @@ function NavBar({ scrollY }) {
             <Sparkles className="h-5 w-5 text-cyan-300" />
           </span>
           <div>
-            <p className="font-semibold tracking-[0.24em] text-sm uppercase text-cyan-300">NovaMind</p>
-            <p className="text-xs text-zinc-400">Adaptive AI Infrastructure</p>
+            <p className="font-semibold tracking-[0.24em] text-sm uppercase text-cyan-300">AGI</p>
+            <p className="text-xs text-zinc-400">Agent General Intelligence</p>
           </div>
         </Link>
 

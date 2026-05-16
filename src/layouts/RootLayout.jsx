@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import AnimatedBackground from '../components/AnimatedBackground';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 function RootLayout({ children }) {
   const location = useLocation();
@@ -27,6 +28,7 @@ function RootLayout({ children }) {
       >
         {children}
       </motion.main>
+      <ScrollToTopButton />
     </div>
   );
 }

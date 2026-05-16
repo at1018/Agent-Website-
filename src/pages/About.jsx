@@ -10,17 +10,17 @@ function About() {
               A New Category of Intelligence: Infrastructure that Learns to Build Itself.
             </h1>
             <p className="text-lg leading-8 text-slate-300 max-w-4xl">
-              Most AI is static—it is only as good as the day it was programmed. NovaMind is a Self-Evolving Operating System designed to identify its own limitations and build the tools required to overcome them. We don't just solve today's problems; we build the architecture to solve tomorrow's.
+              Most AI is static—it is only as good as the day it was programmed. AGI is a Self-Evolving Operating System designed to identify its own limitations and build the tools required to overcome them. We don't just solve today's problems; we build the architecture to solve tomorrow's.
             </p>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }} className="mt-10 grid gap-8 lg:grid-cols-2">
             <div className="space-y-6 rounded-[32px] border border-white/10 bg-[#09101f]/90 p-8">
               <h3 className="text-xl font-semibold text-white">From Cost Center to Appreciating Asset</h3>
-              <p className="text-base leading-8 text-slate-300">Traditional AI projects are 'Cost Centers'—they require endless maintenance and expensive developers to update. NovaMind is an Appreciating Asset. Because it identifies its own 'Capability Gaps' and builds its own tools, the system actually becomes more efficient and more valuable the more you use it.</p>
+              <p className="text-base leading-8 text-slate-300">Traditional AI projects are 'Cost Centers'—they require endless maintenance and expensive developers to update. AGI is an Appreciating Asset. Because it identifies its own 'Capability Gaps' and builds its own tools, the system actually becomes more efficient and more valuable the more you use it.</p>
             </div>
             <div className="space-y-6 rounded-[32px] border border-white/10 bg-[#09101f]/90 p-8">
               <h3 className="text-xl font-semibold text-white">The End of the 'Privacy vs. Power' Trade-off</h3>
-              <p className="text-base leading-8 text-slate-300">We believe a company's intelligence should stay within its walls. NovaMind is built to run entirely On-System. You get the power of the world's most advanced AI evolution without ever sending a single byte of proprietary data to a public cloud.</p>
+              <p className="text-base leading-8 text-slate-300">We believe a company's intelligence should stay within its walls. AGI is built to run entirely On-System. You get the power of the world's most advanced AI evolution without ever sending a single byte of proprietary data to a public cloud.</p>
             </div>
           </motion.div>
         </section>
@@ -30,7 +30,7 @@ function About() {
           <div className="mt-8 space-y-6">
             <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
               <p className="font-semibold text-white">The Self-Healing Core</p>
-              <p className="mt-2 text-sm text-slate-300">Instead of crashing when it hits a new task, NovaMind analyzes the requirement and triggers a 'Tool-Forging' workflow.</p>
+              <p className="mt-2 text-sm text-slate-300">Instead of crashing when it hits a new task, AGI analyzes the requirement and triggers a 'Tool-Forging' workflow.</p>
             </div>
             <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
               <p className="font-semibold text-white">Autonomous Gap Remediation</p>

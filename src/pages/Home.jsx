@@ -29,7 +29,7 @@ function Home() {
 
 function HeroSection() {
   return (
-    <section id="home" className="rounded-[32px] border border-white/10 bg-[#08101f]/90 p-6 shadow-soft backdrop-blur-xl">
+    <section id="home" className="scroll-mt-24 rounded-[32px] border border-white/10 bg-[#08101f]/90 p-6 shadow-soft backdrop-blur-xl">
       <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-center">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease: 'easeOut' }} className="space-y-8">
           <span className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-cyan-300">
@@ -129,7 +129,7 @@ function WorkflowSection() {
   ];
 
   return (
-    <section id="workflow" className="overflow-visible rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
+    <section id="workflow" className="scroll-mt-24 overflow-visible rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
       <div className="mx-auto max-w-[1400px] w-full overflow-visible">
         <SectionHeading
           eyebrow="Workflow"
@@ -417,7 +417,7 @@ function UseCasesSection() {
 
 function ArchitectureSection() {
   return (
-    <section id="architecture" className="rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
+    <section id="architecture" className="scroll-mt-24 rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
       <SectionHeading
         eyebrow="Architecture"
         title="Infrastructure Designed for Continuous Evolution."
@@ -457,7 +457,7 @@ function ArchitectureSection() {
 
 function VisionSection() {
   return (
-    <section id="vision" className="rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
+    <section id="vision" className="scroll-mt-24 rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
       <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-center">
         <div className="space-y-6">
           <SectionHeading
@@ -505,17 +505,17 @@ function VisionSection() {
 
 function ContactCtaSection() {
   return (
-    <section id="contact" className="rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
+    <section id="contact" className="scroll-mt-24 rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
       <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-start">
         <div className="space-y-6">
           <SectionHeading
             eyebrow="Connect"
-            title="Build the Future of Adaptive AI Infrastructure."
+            title="Build the Future of Agent General Intelligence."
             description="Partner with us to unlock autonomous capability expansion, reduce technical debt, and launch enterprise-grade AI that learns to grow."
           />
           <p className="max-w-3xl text-sm leading-7 text-slate-300">Request a demo, connect with our founders, or arrange a private briefing for your leadership team. This platform is built for enterprises that need AI to evolve safely and strategically.</p>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <a href="mailto:hello@novamind.ai" className="inline-flex items-center justify-center rounded-3xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:brightness-110">Coming Soon</a>
+            <a href="mailto:hello@agi.ai" className="inline-flex items-center justify-center rounded-3xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:brightness-110">Coming Soon</a>
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
