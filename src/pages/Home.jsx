@@ -496,9 +496,6 @@ function VisionSection() {
                 </div>
               ))}
             </div>
-            <div className="rounded-[24px] border border-white/10 bg-[#0b1524]/95 p-4 text-sm text-slate-300">
-              <p>Investors see a platform that does not just respond—it grows, validates, and activates new enterprise skills with every interaction.</p>
-            </div>
           </div>
         </div>
       </div>
@@ -518,8 +515,7 @@ function ContactCtaSection() {
           />
           <p className="max-w-3xl text-sm leading-7 text-slate-300">Request a demo, connect with our founders, or arrange a private briefing for your leadership team. This platform is built for enterprises that need AI to evolve safely and strategically.</p>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <a href="mailto:hello@novamind.ai" className="inline-flex items-center justify-center rounded-3xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:brightness-110">Request Demo</a>
-            <a href="mailto:hello@novamind.ai" className="inline-flex items-center justify-center rounded-3xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/40 hover:bg-white/10">Connect With Founders</a>
+            <a href="mailto:hello@novamind.ai" className="inline-flex items-center justify-center rounded-3xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:brightness-110">Coming Soon</a>
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -530,7 +526,6 @@ function ContactCtaSection() {
             <div key={profile.name} className="rounded-[28px] border border-white/10 bg-[#08101f]/95 p-6 shadow-soft backdrop-blur-xl">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-cyan-400/10 text-cyan-300 font-semibold">{profile.name.split(' ').map((part) => part[0]).slice(0, 2).join('')}</div>
               <h3 className="mt-5 text-lg font-semibold text-white">{profile.name}</h3>
-              <p className="mt-2 text-sm text-slate-300">{profile.role}</p>
               <div className="mt-5 flex items-center gap-3 text-slate-300">
                 <a href="#" className="transition hover:text-white">LinkedIn</a>
                 <span className="text-slate-600">•</span>

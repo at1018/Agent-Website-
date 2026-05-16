@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Menu, X, Sparkles } from 'lucide-react';
 
 const navItems = [
-  { label: 'Home', href: '/' },
   { label: 'How It Works', href: '/#workflow' },
   { label: 'Architecture', href: '/#architecture' },
   { label: 'Vision', href: '/#vision' },

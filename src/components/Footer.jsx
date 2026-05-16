@@ -1,5 +1,3 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
-
 function Footer() {
   return (
     <footer className="border-t border-white/10 pt-12 pb-8">
@@ -11,8 +9,7 @@ function Footer() {
               Self-evolving AI infrastructure for enterprises that demand adaptive intelligence, secure automation, and controlled capability expansion.
             </p>
           </div>
-          <div className="grid gap-3 sm:grid-cols-3">
-            <a href="/#home" className="rounded-3xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300 transition hover:border-cyan-300/30 hover:text-white">Home</a>
+          <div className="grid gap-3 sm:grid-cols-2">
             <a href="/#workflow" className="rounded-3xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300 transition hover:border-cyan-300/30 hover:text-white">How It Works</a>
             <a href="/#architecture" className="rounded-3xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300 transition hover:border-cyan-300/30 hover:text-white">Architecture</a>
           </div>
@@ -22,15 +19,6 @@ function Footer() {
           <p className="text-sm text-slate-500">© 2026 NovaMind. Self-Evolving AI Infrastructure.</p>
           <div className="flex items-center gap-4 text-slate-300">
             <a href="#contact" className="transition hover:text-white">Contact</a>
-            <a href="#" className="text-slate-300 transition hover:text-white" aria-label="LinkedIn">
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-slate-300 transition hover:text-white" aria-label="GitHub">
-              <Github className="h-5 w-5" />
-            </a>
-            <a href="mailto:hello@novamind.ai" className="text-slate-300 transition hover:text-white" aria-label="Email">
-              <Mail className="h-5 w-5" />
-            </a>
           </div>
         </div>
       </div>
