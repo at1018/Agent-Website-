@@ -28,14 +28,14 @@ function NavBar({ scrollY }) {
 
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="text-sm font-medium text-zinc-300 transition hover:text-white">
+            <a key={item.href} href={item.href.replace('/#', '#')} className="text-sm font-medium text-zinc-300 transition hover:text-white">
               {item.label}
             </a>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a href="/#contact" className="inline-flex items-center justify-center rounded-3xl border border-cyan-300/20 bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20 hover:text-white">
+          <a href="#contact" className="inline-flex items-center justify-center rounded-3xl border border-cyan-300/20 bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20 hover:text-white">
             Request Demo
           </a>
         </div>

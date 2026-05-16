@@ -15,6 +15,7 @@ function App() {
           <Route path="/" element={<PageTransition><Home /></PageTransition>} />
           <Route path="/about" element={<PageTransition><About /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+          <Route path="*" element={<PageTransition><Home /></PageTransition>} />
         </Routes>
       </AnimatePresence>
     </RootLayout>

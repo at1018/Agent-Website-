@@ -38,8 +38,8 @@ function HeroSection() {
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-semibold tracking-[-0.04em] text-white">AI That Expands Beyond Its Original Capabilities.</h1>
           <p className="max-w-3xl text-sm sm:text-base leading-7 text-slate-300">Traditional AI systems stop at predefined tools. Our infrastructure detects capability gaps, orchestrates autonomous development workflows, and continuously evolves through human-approved intelligence expansion.</p>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a href="/#workflow" className="inline-flex items-center justify-center rounded-3xl bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:brightness-110">Watch Evolution <ArrowRight className="ml-3 h-4 w-4" /></a>
-            <a href="/#architecture" className="inline-flex items-center justify-center rounded-3xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/40 hover:bg-white/10">Explore Architecture</a>
+            <a href="#workflow" className="inline-flex items-center justify-center rounded-3xl bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:brightness-110">Watch Evolution <ArrowRight className="ml-3 h-4 w-4" /></a>
+            <a href="#architecture" className="inline-flex items-center justify-center rounded-3xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/40 hover:bg-white/10">Explore Architecture</a>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
@@ -129,27 +129,26 @@ function WorkflowSection() {
   ];
 
   return (
-    <section id="workflow" className="scroll-mt-24 overflow-visible rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
+    <section id="workflow" className="scroll-mt-28 overflow-x-hidden rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
       <div className="mx-auto w-full max-w-full overflow-visible">
         <SectionHeading
           eyebrow="Workflow"
           title="From Capability Gaps to Autonomous Evolution."
           description="Instead of failing when encountering unsupported requests, the system identifies capability gaps, creates improvement workflows, and orchestrates the lifecycle required to expand its intelligence."
         />
-        <div className="mt-10 space-y-10">
+        <div className="mt-10 space-y-10 pb-8">
           <AdaptiveWorkflowSection />
           <motion.div
             initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6 pb-8 overflow-visible"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="relative z-10 space-y-6 pb-8 overflow-visible"
           >
-            <div className="overflow-visible rounded-[28px] border border-white/10 bg-[#08111f]/95 p-5 shadow-soft backdrop-blur-xl">
+            <div className="relative z-10 overflow-visible rounded-[28px] border border-white/10 bg-[#08111f]/95 p-5 shadow-soft backdrop-blur-xl">
               <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80">Workflow timeline</p>
-              <div className="mt-6 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+              <div className="mt-6 grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                   {steps.map((step, index) => (
-                    <div key={step} className="rounded-[28px] border border-white/10 bg-[#0b1320]/95 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+                    <div key={step} className="min-w-0 rounded-[28px] border border-white/10 bg-[#0b1320]/95 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
                       <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-300/15 font-semibold">{index + 1}</div>
                       <h3 className="mt-4 text-lg font-semibold text-white">{step}</h3>
                       <p className="mt-3 text-sm leading-6 text-slate-400">{step === 'Gap Detected' ? 'The system flags missing capability and elevates it into the expansion pipeline.' : step === 'Enhanced Capability' ? 'The new skill is activated and future requests are handled automatically.' : 'A progressive phase in the autonomous capability lifecycle.'}</p>
@@ -158,7 +157,7 @@ function WorkflowSection() {
               </div>
             </div>
 
-            <div className="w-full rounded-[28px] border border-white/10 bg-[#08111f]/95 p-6 shadow-soft backdrop-blur-xl">
+            <div className="relative z-10 w-full rounded-[28px] border border-white/10 bg-[#08111f]/95 p-6 shadow-soft backdrop-blur-xl min-h-fit">
               <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Evolution summary</p>
               <h3 className="mt-4 text-2xl font-semibold text-white">The system does not simply execute tasks. It evolves its ability to solve future tasks.</h3>
               <p className="mt-3 text-sm leading-7 text-slate-300">Each unsupported request becomes a data-driven improvement opportunity, with every workflow designed to expand the platform's capability registry permanently.</p>
