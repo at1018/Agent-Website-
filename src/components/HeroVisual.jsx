@@ -1,10 +1,28 @@
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 
 function HeroVisual() {
+  const [sceneScale, setSceneScale] = useState(1);
+
+  useEffect(() => {
+    const updateScale = () => {
+      if (window.innerWidth <= 640) {
+        setSceneScale(0.82);
+      } else if (window.innerWidth <= 900) {
+        setSceneScale(0.92);
+      } else {
+        setSceneScale(1);
+      }
+    };
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
+
   return (
-    <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#07101f]/95 shadow-soft backdrop-blur-xl w-full h-[260px] sm:h-[340px] md:h-[420px] lg:h-[520px]">
+    <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#07101f]/95 shadow-soft backdrop-blur-xl w-full h-[320px] sm:h-[380px] md:h-[420px] lg:h-[520px]">
       <Canvas camera={{ position: [0, 0, 14], fov: 32 }} className="h-full w-full">
         <color attach="background" args={["#030615"]} />
         <fog attach="fog" args={["#030615", 8, 24]} />
@@ -12,9 +30,11 @@ function HeroVisual() {
         <directionalLight position={[4, 4, 5]} intensity={1.1} color="#7dd3fc" />
         <pointLight position={[-2.8, 2.2, 3]} color="#c084fc" intensity={0.8} />
         <pointLight position={[2.4, -2.3, 3]} color="#38bdf8" intensity={0.75} />
-        <ParticleSwarm />
-        <NetworkCore />
-        <OrbitNodes />
+        <group scale={[sceneScale, sceneScale, sceneScale]}>
+          <ParticleSwarm />
+          <NetworkCore />
+          <OrbitNodes />
+        </group>
       </Canvas>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#05080f] to-transparent" />
     </div>

@@ -181,8 +181,8 @@ function AdaptiveWorkflowSection() {
     : undefined;
 
   return (
-    <div id="adaptive-evolution" className="rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
-      <div className="grid gap-8">
+    <div id="adaptive-evolution" className="rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl overflow-visible">
+      <div className="grid gap-8 overflow-visible">
         <div className="space-y-4 max-w-3xl">
           <div className="inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-cyan-300">Adaptive Capability Evolution</div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] text-white">Adaptive Capability Evolution</h2>
@@ -201,9 +201,9 @@ function AdaptiveWorkflowSection() {
             </Canvas>
           </div>
 
-          <div className="relative mx-auto max-w-[1720px] py-8">
+          <div className="relative mx-auto w-full max-w-full py-8 px-0 sm:px-4">
             <div className="relative overflow-visible rounded-[28px] border border-white/10 bg-[#081724]/90 p-4">
-              <svg viewBox={`0 0 ${width} ${height}`} className="h-[320px] w-full sm:h-[420px] lg:h-[520px]">
+              <svg viewBox={`0 0 ${width} ${height}`} className="h-[320px] w-full max-w-full min-w-0 sm:h-[420px] lg:h-[520px]">
                 <defs>
                   <linearGradient id="gradient-fast" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stopColor="#38bdf8" />

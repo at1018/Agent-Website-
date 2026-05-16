@@ -56,13 +56,13 @@ function HeroSection() {
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.75, ease: 'easeOut' }} className="relative w-full max-w-[780px] mx-auto sm:mx-0">
+        <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.75, ease: 'easeOut' }} className="relative w-full max-w-full md:max-w-[780px] mx-auto sm:mx-0 overflow-hidden px-2 sm:px-0">
           <HeroVisual />
-          <div className="absolute left-4 top-4 rounded-3xl border border-cyan-300/10 bg-[#06121f]/90 px-4 py-3 shadow-soft backdrop-blur-xl sm:left-6 sm:top-6">
-            <p className="text-xs uppercase tracking-[0.28em] text-cyan-300/80">Live intelligence</p>
-            <p className="mt-2 text-sm text-white">Realtime capability growth metrics</p>
+          <div className="absolute left-2 top-2 max-w-[60%] rounded-3xl border border-cyan-300/10 bg-[#06121f]/90 px-2.5 py-1.5 shadow-soft backdrop-blur-xl sm:left-6 sm:top-6 sm:max-w-[80%]">
+            <p className="text-[8px] uppercase tracking-[0.28em] text-cyan-300/80 sm:text-[11px]">Live intelligence</p>
+            <p className="mt-1 text-[9px] leading-4 text-white sm:text-xs">Realtime capability growth metrics</p>
           </div>
-          <div className="absolute right-4 bottom-4 rounded-3xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300 shadow-soft backdrop-blur-xl sm:right-6 sm:bottom-6">
+          <div className="absolute right-2 bottom-2 max-w-[56%] rounded-3xl border border-white/10 bg-white/5 px-2.5 py-1.5 text-[9px] text-slate-300 shadow-soft backdrop-blur-xl sm:right-6 sm:bottom-6 sm:max-w-[60%] sm:text-xs">
             <span className="inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400 mr-2" />Active evolution engine
           </div>
         </motion.div>
@@ -130,7 +130,7 @@ function WorkflowSection() {
 
   return (
     <section id="workflow" className="scroll-mt-24 overflow-visible rounded-[32px] border border-white/10 bg-[#07101f]/90 p-6 shadow-soft backdrop-blur-xl">
-      <div className="mx-auto max-w-[1400px] w-full overflow-visible">
+      <div className="mx-auto w-full max-w-full overflow-visible">
         <SectionHeading
           eyebrow="Workflow"
           title="From Capability Gaps to Autonomous Evolution."
@@ -143,9 +143,9 @@ function WorkflowSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-6 pb-8 overflow-visible"
           >
-            <div className="overflow-hidden rounded-[28px] border border-white/10 bg-[#08111f]/95 p-5 shadow-soft backdrop-blur-xl">
+            <div className="overflow-visible rounded-[28px] border border-white/10 bg-[#08111f]/95 p-5 shadow-soft backdrop-blur-xl">
               <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80">Workflow timeline</p>
               <div className="mt-6 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                   {steps.map((step, index) => (
