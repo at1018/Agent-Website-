@@ -519,16 +519,34 @@ function ContactCtaSection() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {[
-            { name: 'Atul Tiwari', role: 'Founder & CTO' },
-            { name: 'Yogesh Kumar', role: 'Co-Founder & Product' },
+            {
+              name: 'Atul Tiwari',
+              role: 'Founder & CTO',
+              linkedin: 'https://www.linkedin.com/in/atul-tiwari-2a94a9213',
+              github: 'https://github.com/at1018',
+            },
+            {
+              name: 'Yogesh Kumar',
+              role: 'Co-Founder & Product',
+              linkedin: 'https://linkedin.com/in/yogesh-krr',
+              github: 'https://github.com/yogeshsingh2672000/',
+            },
           ].map((profile) => (
             <div key={profile.name} className="rounded-[28px] border border-white/10 bg-[#08101f]/95 p-6 shadow-soft backdrop-blur-xl">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-cyan-400/10 text-cyan-300 font-semibold">{profile.name.split(' ').map((part) => part[0]).slice(0, 2).join('')}</div>
               <h3 className="mt-5 text-lg font-semibold text-white">{profile.name}</h3>
               <div className="mt-5 flex items-center gap-3 text-slate-300">
-                <a href="#" className="transition hover:text-white">LinkedIn</a>
+                {profile.linkedin ? (
+                  <a href={profile.linkedin} target="_blank" rel="noreferrer" className="transition hover:text-white">LinkedIn</a>
+                ) : (
+                  <span className="text-slate-500">LinkedIn</span>
+                )}
                 <span className="text-slate-600">•</span>
-                <a href="#" className="transition hover:text-white">GitHub</a>
+                {profile.github ? (
+                  <a href={profile.github} target="_blank" rel="noreferrer" className="transition hover:text-white">GitHub</a>
+                ) : (
+                  <span className="text-slate-500">GitHub</span>
+                )}
               </div>
             </div>
           ))}
